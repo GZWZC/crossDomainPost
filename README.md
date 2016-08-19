@@ -1,0 +1,6 @@
+# crossDomainPost
+很多时候我们会遇到跨域请求数据，但是jquery提供的只是单纯的jsonp-get跨域获取。而复杂的post请求则需要其他方法。
+跨域进行POST请求，原理：
+通过js动态生成不可见表单input和iframe，将表单的target设为iframe的name以此通过iframe做post提交。
+提交后由于跨域，无法直接读取响应内容，一般的做法是，iframe内通过js改变自身location的fragment，外部则监听iframe的onload事件，读取fragment的内容。
+有现成的跨域iframe通信类库，如jQuery PostMessage Plugin。
